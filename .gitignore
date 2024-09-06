@@ -1,7 +1,8 @@
 env
 
 # WebApp/backend/__pycache__
-# /WebApp/api/__pycache__
+/WebApp/api/__pycache__
+*.pyc
 
 __pycache__/
 *.pyc
