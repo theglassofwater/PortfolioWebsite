@@ -24,20 +24,27 @@
 
 .ProjectsContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
-    gap: 20px; /* Adjust the gap between items as needed */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
 
     div {
-      border: 1px solid #ddd; /* Optional: Add border to each item */
+      /* border: 1px solid #ddd;  */
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      div{
-
-      }
+      /* justify-content: space-between; */
+      align-items: right;
       p{
-        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        color: #a52a2a;
+        /* height: 100vh; */
       }
+      /* a{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      } */
+
     }
     
 
