@@ -1,12 +1,13 @@
 import React from "react";
-import YeImage from "../assets/logos/YE-192x192.png";
-import gitIcon from "../assets/github_icon.svg";
-import linkedinIcon from "../assets/linkedin_icon.svg";
-import CV from "../assets/CV_Base_Data.pdf";
+import YeImage from "../../assets/logos/YE-192x192.png";
+import gitIcon from "../../assets/github_icon.svg";
+import linkedinIcon from "../../assets/linkedin_icon.svg";
+import CV from "../../assets/CV_Base_Data.pdf";
+import "./Home.css";
 
 const Home = () => {
     return (
-        <section id="home">  
+        <section id="home" >  
             <h1 className="Navbar">Projects    Home     Contact</h1>
             <div className="Pic"> 
                 <img src={YeImage} alt="Youssef El Aasar" />
@@ -21,7 +22,6 @@ const Home = () => {
                     <a href="https://www.linkedin.com/in/youssefelaasar" target="_blank">
                         <img src={linkedinIcon} alt="LinkedIn Icon" />
                     </a>
-
                     <a href="https://www.github.com/theglassofwater" target="_blank">
                         <img src={gitIcon} alt="GitHub Icon" />
                     </a>
