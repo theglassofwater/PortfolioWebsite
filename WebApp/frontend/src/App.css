@@ -1,8 +1,82 @@
-.App {
-  text-align: center;
+:root {
+  --background-color: #222;
+  --btn-color: #fff;
+  --btn-text-color: #222;
+  --project-card-bg: #fff;
+  --text-color: #fff;
+  --form-text-color: #fff;
+  --footer-text-color: #bbb;
 }
 
-.App-logo {
+body {
+  background-color: var(--background-color);
+}
+h1,h2,h3,p {
+  color: var(--text-color);
+  /* margin: 0;
+  padding: 0; */
+}
+h1{
+  font-size: 2.5rem;
+}
+h1,h2{
+  text-transform: uppercase;
+}
+h3,p{
+  font-family: sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 60px;
+}
+.Pic {
+  padding-top: 6vmin;
+  object-fit: cover;
+  /* height: 30min; */
+}
+.Navbar {
+  /* min-height: 100vh; */
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(77, 73, 73);
+  word-spacing: 10vmin;
+}
+.SectionTitle {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+.App-link {
+  color: #61dafb;
+}
+
+
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -13,21 +87,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +94,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

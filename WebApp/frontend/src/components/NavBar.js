@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -19,9 +19,6 @@ const page_urls = [ '/projects', '/contact'];
 
 export default function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-
-  const locations = useLocation()
-  const path = locations.pathname
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -78,11 +75,11 @@ export default function NavBar() {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: 'block', md: 'none'} , color: 'black' }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} component={Link} to={page_urls[pages.indexOf(page)]} onClick={handleCloseNavMenu}>
-                  <Typography  sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography  sx={{ textAlign: 'center'}}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>

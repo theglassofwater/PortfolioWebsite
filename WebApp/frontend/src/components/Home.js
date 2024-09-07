@@ -7,7 +7,8 @@ import CV from "../assets/CV_Base_Data.pdf";
 const Home = () => {
     return (
         <section id="home">  
-            <div> 
+            <h1 className="Navbar">Projects    Home     Contact</h1>
+            <div className="Pic"> 
                 <img src={YeImage} alt="Youssef El Aasar" />
             </div>
             <div>
@@ -26,7 +27,7 @@ const Home = () => {
                     </a>
                 </span>
                 <p>
-                    Curios programmer with a passion for learning and problem solving.
+                    Curious programmer with a passion for learning and problem solving.
                 </p>
                 <a href={CV} target="_blank">  
                     <button download>Download CV</button>
