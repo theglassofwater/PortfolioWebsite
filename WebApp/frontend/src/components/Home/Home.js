@@ -1,18 +1,18 @@
+import styles from "./Home.module.css";
 import React from "react";
 import YeImage from "../../assets/logos/YE-192x192.png";
 import gitIcon from "../../assets/github_icon.svg";
 import linkedinIcon from "../../assets/linkedin_icon.svg";
 import CV from "../../assets/CV_Base_Data.pdf";
-import "./Home.css";
 
 const Home = () => {
     return (
-        <section id="home" >  
-            <h1 className="Navbar">Projects    Home     Contact</h1>
-            <div className="Pic"> 
+        <section id="home" className={styles.container}>  
+            <h1 className="Header">Projects    Home     Contact</h1>
+            <div> 
                 <img src={YeImage} alt="Youssef El Aasar" />
             </div>
-            <div>
+            <div className={styles.Info}>
                 <h1>Youssef 
                     <br />
                     El Aasar
@@ -26,11 +26,11 @@ const Home = () => {
                         <img src={gitIcon} alt="GitHub Icon" />
                     </a>
                 </span>
-                <p>
+                <p className={styles.description}>
                     Curious programmer with a passion for learning and problem solving.
                 </p>
                 <a href={CV} target="_blank">  
-                    <button download>Download CV</button>
+                    <button download>Open CV</button>
                 </a>
             </div>
         </section>

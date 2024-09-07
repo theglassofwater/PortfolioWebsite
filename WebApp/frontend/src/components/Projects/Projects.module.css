@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  
+    img {
+      width: 30%;
+      align-self: center;
+      background-color: #fff;
+      border-radius: 20px;
+    }
+  
+    a {
+      width: fit-content;
+      text-decoration: none;
+      color: #222;
+      transition: transform 200ms ease-in-out;
+    }
+  
+    a:hover {
+      transform: scale(1.05);
+    }
+  }
+
+.ProjectsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 columns */
+    gap: 20px; /* Adjust the gap between items as needed */
+
+    div {
+      border: 1px solid #ddd; /* Optional: Add border to each item */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      div{
+
+      }
+      p{
+        flex: 1;
+      }
+    }
+    
+
+  }
+  
+
+@media (width >= 800px) {
+    .projectsContainer {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 0 30px;
+    }
+  }
