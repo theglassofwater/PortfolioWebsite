@@ -8,7 +8,13 @@ const Skills = () => {
         <section id="Skills" className={styles.container}>
             <h1>
                 Skills
-            </h1>
+            </h1>        
+            <div className={styles.skillContainer}>   
+                <SkillsList icon={tick} name="Machine Learning"/>
+                <SkillsList icon={tick} name="Artificial Intelligence"/>
+                <SkillsList icon={tick} name="Data Analytics"/>
+            </div>
+            <hr />
             <div className={styles.skillContainer}>   
                 <SkillsList icon={tick} name="Python"/>
                 <SkillsList icon={tick} name="SQL"/>
@@ -20,15 +26,14 @@ const Skills = () => {
             </div>
             <hr />
             <div className={styles.skillContainer}>   
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
-                <SkillsList icon={tick} name="Data"/>
+                <SkillsList icon={tick} name="PyTorch"/>
+                <SkillsList icon={tick} name="NumPy"/>
+                <SkillsList icon={tick} name="Pandas"/>
+                <SkillsList icon={tick} name="Scikit-Learn"/>
+                <SkillsList icon={tick} name="MatPlotLib"/>
+                <SkillsList icon={tick} name="Django"/>
+                <SkillsList icon={tick} name="React"/>
             </div>
-            <hr />
         </section>
     );
 }
