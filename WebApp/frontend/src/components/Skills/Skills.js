@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Skills.module.css";
 import tick from "../../assets/tick.svg";
-import SkillsList from "./../Extra/SkillsList";
+// import SkillsList from "./../Extra/SkillsList";
 
 const Skills = () => {
     return (
@@ -37,5 +37,14 @@ const Skills = () => {
         </section>
     );
 }
+
+function SkillsList({icon, name}) {
+    return (
+      <span>
+          <img src={icon} alt={name} />
+          <p>{name}</p>
+      </span>
+    );
+  }
 
 export default Skills;
