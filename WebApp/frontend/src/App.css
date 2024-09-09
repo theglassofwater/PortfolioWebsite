@@ -1,12 +1,6 @@
 :root {
   --background-color: #222;
   --secondary-color: #a52a2a;
-  --btn-color: #fff;
-  --btn-text-color: #222;
-  --project-card-bg: #fff;
-  --text-color: #fff;
-  --form-text-color: #fff;
-  --footer-text-color: #bbb;
 }
 
 body {
@@ -16,7 +10,7 @@ body {
   margin-right: 1%;
 }
 h1,h2,h3,p {
-  color: var(--text-color);
+  color: white;
   /* margin: 0;
   padding: 0; */
 }

@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-// import {Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Projects from './components/Projects/Projects'; 
 import Skills from './components/Skills/Skills';
@@ -13,11 +13,11 @@ function App() {
       <Projects />
       <Skills />
       <Contact />
-      {/* <Routes>
-        <Route path="/" element={<Home />} />
+      <Routes>
+        {/* <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes> */}
+        <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
     </>
   );
 }
