@@ -12,7 +12,7 @@ const Home = () => {
             <div> 
                 <img src={YeImage} alt="Youssef El Aasar" />
             </div>
-            <div className={styles.Info}>
+            <div className={styles.info}>
                 <h1>Youssef 
                     <br />
                     El Aasar
