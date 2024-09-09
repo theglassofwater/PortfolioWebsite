@@ -1,12 +1,12 @@
 import React from "react";
+import styles from "./Contact.module.css";
 
 const Contact = () => {
     return (
-        <section id="contact">
+        <section id="contact" className={styles.container}>
+            <h1 className="sectionTitle">contact</h1>
             <div>
-                <h1>
-                    contact
-                </h1>
+                
             </div>
         </section>
     );

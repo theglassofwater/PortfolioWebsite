@@ -5,7 +5,7 @@ import Project1Image from "../../assets/symbolic_music_gen_pic.jpeg";
 const Projects = () => {
     return (
     <section id="projects" className={styles.container}>
-        <h1 className="SectionTitle">Projects</h1>
+        <h1 className="sectionTitle">Projects</h1>
         <div className={styles.projectsContainer}>
             <div>   
                 <a href="https://www.github.com/theglassofwater/project1" target="_blank">
