@@ -17,7 +17,7 @@ const Home = () => {
                     <br />
                     El Aasar
                 </h1>
-                <h2>Computer Science Masters Graduate</h2>
+                <h2>Masters Computer Science Student</h2>
                 <span>
                     <a href="https://www.linkedin.com/in/youssefelaasar" target="_blank">
                         <img src={linkedinIcon} alt="LinkedIn Icon" />
