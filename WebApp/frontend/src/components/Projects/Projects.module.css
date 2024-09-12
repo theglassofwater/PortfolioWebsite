@@ -2,11 +2,11 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    height: 100dvh;
-    margin-bottom: 10dvw;
+    /* height: 100dvh; */
+    margin-bottom: 10dvh;
   
     img {
-      width: 30%;
+      width: 50%;
       align-self: center;
       background-color: #fff;
       border-radius: 20px;
@@ -34,29 +34,19 @@
       /* border: 1px solid #ddd;  */
       display: flex;
       /* justify-content: space-between; */
-      align-items: right;
+      /* align-items: right; */
       p{
         display: flex;
         justify-content: center;
         align-items: center; 
         color: #a52a2a;
-        /* height: 100vh; */
       }
-      /* a{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-      } */
-
     }
-    
 
   }
   
 
 @media (width >= 800px) {
-    /* height: 10dvh; */
-
     .projectsContainer {
       display: grid;
       flex-direction: row;

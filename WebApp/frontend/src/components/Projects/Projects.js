@@ -49,5 +49,4 @@ function Project(props) {
     );
 }
 
-
 export default  Projects;
