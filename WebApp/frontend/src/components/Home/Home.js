@@ -8,9 +8,8 @@ import CV from "../../assets/CV_Base_Data.pdf";
 const Home = () => {
     return (
         <section id="home" className={styles.container}>  
-            <h1 className="Header">Projects    Home     Contact</h1>
             <div> 
-                <img src={YeImage} alt="Youssef El Aasar" />
+                <img className="profilePicture" src={YeImage} alt="Profile Picture" />
             </div>
             <div className={styles.info}>
                 <h1>Youssef 

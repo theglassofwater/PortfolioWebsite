@@ -1,7 +1,15 @@
 
 .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
   text-align: center;
-  img {
+  height: 100dvh;
+  min-height: 500px;
+  
+  .profilePicture {
+      margin-top: 2rem;
       width: 12rem;
       height: 12rem;
   }
@@ -57,7 +65,25 @@
   gap: 10px;
 }
 
-/* .Pic {
-padding-top: 6vmin;
-object-fit: cover;
-} */
+
+@media (width >= 800px) {
+    .container {
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-evenly;
+  
+      .profilePicture {
+        max-width: 350px;
+        width: 350px;
+      }
+    }
+  }
+  
+@media (width >= 1400px) {
+    .container {
+      .profilePicture {
+        max-width: 400px;
+        width: 400px;
+      }
+    }
+}
