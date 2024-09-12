@@ -2,10 +2,11 @@
 My Portfolio Web Application, the project currently displays details such as projects and contact details.
 
 Next Goals: 
+
 Frontend: 
-Add header
+refactor header, make header+home be height of screen
 Go through each section/component and make it better
-Make sections for playing around with certain projects eg. generating music (this is the end goal of this website)
+Make new page for playing around with certain projects eg. generating music (this is the end goal of this website)
 
 Backend:
 Make contact messages work (i actually receive the messages)
