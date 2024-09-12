@@ -3,7 +3,7 @@ My Portfolio Web Application, the project currently displays details such as pro
 
 Next Goals: 
 Frontend: 
-Add header and footer
+Add header
 Go through each section/component and make it better
 Make sections for playing around with certain projects eg. generating music (this is the end goal of this website)
 
@@ -11,6 +11,6 @@ Backend:
 Make contact messages work (i actually receive the messages)
 Store Contact details and message, (Maybe store email and name as a user)
 
-Overall: 
+Overall:
+CI/CD Pipeline 
 Deploy on raspberry pi
-CI/CD Pipeline
