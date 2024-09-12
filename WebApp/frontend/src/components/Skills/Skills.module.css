@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100dvh;
   
     span {
       display: flex;
@@ -13,7 +14,7 @@
       width: 30px;
     }
     p {
-        font-size: 28px;
+        font-size: 20px;
     }
   }
 
@@ -29,15 +30,15 @@
   }
 
   hr {
-    width: 200px;
+    width: 300px;
     margin: 1 auto;
     border: 1px solid #a52a2a;
   }
 
 
   @media (width >= 800px) {
-    .skillList {
-      max-width: fit-content;
+    .skillContainer {
+      max-width: 70ch;
       gap: 30px;
   
       p {
@@ -46,6 +47,6 @@
     }
   
     hr {
-      width: 400px;
+      width: 500px;
     }
   }
