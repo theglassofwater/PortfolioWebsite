@@ -6,7 +6,7 @@ const Contact = () => {
         <section id="contact" className={styles.container}>
             <h1 className="sectionTitle">contact</h1>
             <form>
-                <div className="">
+                <div className="formGroup">
                     <label htmlFor="name" hidden>Name</label>
                     <input type="text" id="name" name="name" placeholder="Name" required />
                 </div>

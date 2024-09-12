@@ -3,8 +3,9 @@
     flex-direction: column;
     text-align: center;
     margin-top: 5dvh;
+    font-family: 'Courier New', Courier, monospace;
     /* height: 100dvh; */
-
+}
   
     form {
         display: flex;
@@ -33,6 +34,7 @@
         justify-self: center;
         background-color: var(--background-color);
         color: white;
+        font-family: 'Courier New', Courier, monospace;
       }
 
     input[type='submit'] {
@@ -57,4 +59,22 @@
         transform: translateY(2px);
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
     }
-}
+
+
+@media (width >= 800px) {
+    textarea,
+    input:not([type='submit']) {
+      width: 500px;
+      font-size: 17px;
+    }
+    form {
+      gap: 40px;
+    }
+  }
+  
+  @media (width >= 1400px) {
+    textarea,
+    input:not([type='submit']) {
+      width: 800px;
+    }
+  }
