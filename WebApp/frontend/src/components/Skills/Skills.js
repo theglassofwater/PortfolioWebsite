@@ -5,7 +5,7 @@ import tick from "../../assets/tick.svg";
 
 const Skills = () => {
     return (
-        <section id="Skills" className={styles.container}>
+        <section id="skills" className={styles.container}>
             <h1 className="sectionTitle">
                 Skills
             </h1>        
