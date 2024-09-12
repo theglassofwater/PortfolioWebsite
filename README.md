@@ -10,3 +10,7 @@ Make sections for playing around with certain projects eg. generating music (thi
 Backend:
 Make contact messages work (i actually receive the messages)
 Store Contact details and message, (Maybe store email and name as a user)
+
+Overall: 
+Deploy on raspberry pi
+CI/CD Pipeline
