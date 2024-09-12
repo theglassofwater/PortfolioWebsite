@@ -1,48 +1,53 @@
 import React from "react";
 import styles from "./Projects.module.css";
-import Project1Image from "../../assets/symbolic_music_gen_pic.jpeg";
+import Project1Image from "../../assets/music_generator_icon.jpeg";
 
 const Projects = () => {
     return (
     <section id="projects" className={styles.container}>
         <h1 className="sectionTitle">Projects</h1>
         <div className={styles.projectsContainer}>
-            <div>   
-                <a href="https://www.github.com/theglassofwater/project1" target="_blank">
-                    <h2>Music Generator</h2>
-                    <img src={Project1Image} alt="Project 1" />
-                </a>
-                <p>Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf</p>
-            </div>
-    
-            <div>
-                <a href="https://www.github.com/theglassofwater/project2" target="_blank">
-                    <h2>Project 2</h2>
-                    <img src={Project1Image} alt="Project 2" />
-                </a>
-                <p>Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf</p>
-            </div>
-    
-            <div>                    
-                <a href="https://www.github.com/theglassofwater/project3" target="_blank">
-                    <h2>Project 3</h2>
-                    <img src={Project1Image} alt="Project 3" />
-                </a>
-                <p>Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf</p>
-            </div>
-    
-            <div>
-                <a href="https://www.github.com/theglassofwater/project4" target="_blank">
-                    <h2>Project 4</h2>
-                    <img src={Project1Image} alt="Project 4" />
-                </a>
-
-                <p>Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf</p>
-            </div>
+            <Project
+                title="Music Generator"
+                link="https://www.github.com/theglassofwater/MusicGenerator"
+                image={Project1Image}
+                description="Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"   
+            />
+            <Project
+                title="Portfolio Website"
+                link="https://www.github.com/theglassofwater/PortfolioWebsite"
+                image={Project1Image}
+                description="Description of Project 2 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
+            />
+            <Project
+                title="Project 3"
+                link="https://www.github.com/theglassofwater"
+                image={Project1Image}
+                description="Description of Project 3 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
+            />
+            <Project
+                title="Project 4"
+                link="https://www.github.com/theglassofwater"
+                image={Project1Image}
+                description="Description of Project 4 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
+            />
         </div>
     </section>
     
     );
 }
 
-export default Projects;
+function Project(props) {
+    return (
+        <div>
+            <a href={props.link} target="_blank">
+                <h2>{props.title}</h2>
+                <img src={props.image} alt={props.title} />
+            </a>
+            <p>{props.description}</p>
+        </div>
+    );
+}
+
+
+export default  Projects;
