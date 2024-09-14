@@ -15,7 +15,7 @@ const Home = () => {
                 <img className="profilePicture" src={YeImage} alt="Profile Picture" />
             </div>
             <div className={styles.info}>
-                <h1>Youssef 
+                <h1 className="sectionTitle">Youssef 
                     <br />
                     El Aasar
                 </h1>

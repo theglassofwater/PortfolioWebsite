@@ -7,9 +7,24 @@
     font-size: calc(10px + 3vmin);
     color: #a52a2a;
     word-spacing: 10vmin; */
-    
+    margin-left: 0%;
+    margin-right: 0%;
+    /* border: 1px solid #ddd; */
+    background-color: var(--secondary-color);
+    /* color: var(--background-color); */
+
+
+    span{
+        color: var(--background-color);
+        font-size: 2.5rem;
+        font-family: monospace;
+        text-transform: uppercase;
+        margin: 2rem;
+      }
+
     span:hover {
         transform: scale(1.05);
         cursor: pointer;
     }
+
   }
