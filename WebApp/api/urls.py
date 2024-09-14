@@ -5,8 +5,8 @@ from rest_framework.routers import DefaultRouter
 # from views import UserViewSet, MessageViewSet
 
 router = DefaultRouter()
-router.register('users', UserViewSet, basename='user')
-router.register('message', MessageViewSet, basename='message')
+router.register('users', UserViewSet, basename='users')
+router.register('messages', MessageViewSet, basename='messages')
 urlpatterns = router.urls
 
 # urlpatterns = [
