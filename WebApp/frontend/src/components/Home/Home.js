@@ -4,6 +4,7 @@ import YeImage from "../../assets/logos/YE-192x192.png";
 import gitIcon from "../../assets/github_icon.svg";
 import linkedinIcon from "../../assets/linkedin_icon.svg";
 import CV from "../../assets/CV_Base_Data.pdf";
+import programmingGif from "../../assets/programming_gif.gif";
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
                 <h1>Home </h1>
             </div> */}
             <div> 
-                <img className="profilePicture" src={YeImage} alt="Profile Picture" />
+                <img className={styles.profilePicture} src={programmingGif} alt="Profile Picture" />
             </div>
             <div className={styles.info}>
                 <h1 className="sectionTitle">Youssef 
