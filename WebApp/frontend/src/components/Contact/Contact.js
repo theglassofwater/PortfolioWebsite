@@ -1,23 +1,38 @@
 import React from "react";
 import styles from "./Contact.module.css";
-import {useForm} from "react-hook-form";
+import {useForm, Controller} from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { object, string } from 'yup';
 
 const Contact = () => {
+    const schema = object().shape({
+        name: string().required('Name is required'),
+        email: string().email().required('Email is required'),
+        message: string().required('Message is required')
+    });
+
+    const { register, control, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
+  
+    const onSubmit = data => {
+      console.log(data);
+    };
     return (
         <section id="contact" className={styles.container}>
             <h1 className="sectionTitle">contact</h1>
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="formGroup">
                     <label htmlFor="name" hidden>Name</label>
-                    <input type="text" id="name" name="name" placeholder="Name" required />
+                    <input type="text" id="name" name="name" placeholder="Name" {...register('name', { required: 'name is required' })} required />
                 </div>
                 <div className="">
                     <label htmlFor="Email" hidden>Email</label>
-                    <input type="text" id="Email" name="Email" placeholder="Email" required />
+                    <input type="text" id="Email" name="Email" placeholder="Email" {...register('email', { required: 'email is required' })} required />
+                    {errors.email && <p>{errors.email.message}</p>}
                 </div>
                 <div className="">
                     <label htmlFor="Message" hidden>Message</label>
-                    <textarea type="text" id="Message" name="Message" placeholder="Message" required />
+                    <textarea type="text" id="Message" name="Message" placeholder="Message" {...register('message', { required: 'message is required' })} required />
+                    {errors.message && <p>{errors.message.message}</p>}
                 </div>
                 <input type="submit" value="Submit" />
             </form>
