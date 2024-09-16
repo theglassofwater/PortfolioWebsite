@@ -2,7 +2,7 @@
 My Portfolio Web Application, the project currently displays details such as projects and contact details.
 
 Django with Rest Framework\
-React with Axios
+React with Axios (react hook form, @hookform/resolvers, yup )/
 
 Next Goals: 
 
