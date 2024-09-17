@@ -3,6 +3,7 @@ import styles from "./Contact.module.css";
 import {useForm, Controller} from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
+import AxiosInstance from "../Axios";
 
 const Contact = () => {
     const schema = object().shape({
@@ -14,7 +15,11 @@ const Contact = () => {
     const { register, control, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   
     const onSubmit = data => {
-      console.log(data);
+        AxiosInstance.post('users/', {
+            name: data.name,
+            email: data.email,
+            message: data.message
+        })
     };
     return (
         <section id="contact" className={styles.container}>
@@ -34,7 +39,7 @@ const Contact = () => {
                     <textarea type="text" id="Message" name="Message" placeholder="Message" {...register('message', { required: 'message is required' })} required />
                     {errors.message && <p>{errors.message.message}</p>}
                 </div>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" />  {/* add text or something to show it is submitted */}
             </form>
         </section>
     );
