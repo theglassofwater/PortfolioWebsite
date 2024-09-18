@@ -10,6 +10,11 @@ class User(models.Model):
     def __str__(self):
         return self.email
 
+    def get_dict(self):
+        return {
+            'email': self.email,
+            'name': self.name,
+        }   
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()

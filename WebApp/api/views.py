@@ -40,7 +40,12 @@ class UserViewSet(viewsets.ModelViewSet):
             return Response(user_serializer.errors, status=401)
         
 
+
+        if "message" not in request.data:
+            return Response(user_serializer.data, status=201)
+        
         user_query = User.objects.filter(email=request.data['email'])
+
         message_data = {
             'user': user_query[0].id,
             'message': request.data['message'],
@@ -48,7 +53,7 @@ class UserViewSet(viewsets.ModelViewSet):
         message_serializer = MessageSerializer(data=message_data)
         if message_serializer.is_valid():
             message_serializer.save()
-            return Response({"user": user_serializer.data,
+            return Response({"user": user_query[0].get_dict(),
                             "message": message_serializer.data},
                             status=201)
         return Response(message_serializer.errors, status=402)
