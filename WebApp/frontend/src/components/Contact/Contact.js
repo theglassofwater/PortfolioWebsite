@@ -20,6 +20,12 @@ const Contact = () => {
             email: data.email,
             message: data.message
         })
+        .then(response => {
+            console.log('Data successfully posted:', response.data);
+        })
+        .catch(error => {
+            console.log('Error posting data:', error);
+        });
     };
     return (
         <section id="contact" className={styles.container}>
