@@ -9,7 +9,7 @@ const Projects = () => {
         <div className={styles.projectsContainer}>
             <Project
                 title="Music Generator"
-                link="https://www.github.com/theglassofwater/MusicGenerator"
+                link="/music-generator"
                 image={Project1Image}
                 description="Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"   
             />
