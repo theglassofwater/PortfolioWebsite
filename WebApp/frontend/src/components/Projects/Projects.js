@@ -12,6 +12,7 @@ const Projects = () => {
                 link="/music-generator"
                 image={Project1Image}
                 description="Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"   
+                // openInSamePage={true}
             />
             <Project
                 title="Portfolio Website"
@@ -38,9 +39,12 @@ const Projects = () => {
 }
 
 function Project(props) {
+    const openInSamePage = props.openInSamePage ? {} : { target: "_blank"};
+
     return (
         <div>
-            <a href={props.link} target="_blank">
+            <a href={props.link} {...openInSamePage}>
+            {/* <a href={props.link} target="_blank"> */}
                 <h2>{props.title}</h2>
                 <img src={props.image} alt={props.title} />
             </a>
