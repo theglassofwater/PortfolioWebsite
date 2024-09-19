@@ -1,14 +1,31 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from rest_framework import viewsets, permissions
 from .models import *
 from .serializers import *
+
+from rest_framework import viewsets, permissions
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
-# Create your views here.
+import torch
+from transformers import AutoModelForCausalLM, GenerationConfig, BitsAndBytesConfig
+import numpy as np
+from miditok import REMI
+from utils import *
 
-# def home(request):
-#     return HttpResponse("Hello, World!")
+model_name = "finetuning_16.0epochs"
+model = AutoModelForCausalLM.from_pretrained("theglassofwater/"+model_name)
+if torch.cuda.is_available():
+    model.to("cuda")
+tokenizer = REMI.from_pretrained("theglassofwater/remi_12500")
+
+
+
+@api_view(['GET'])
+def generate_song(request):
+    tokens = generate_song(model, tokenizer, 1000)
+    return Response({"song": tokens})
+    
+
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -23,8 +40,10 @@ class UserViewSet(viewsets.ModelViewSet):
     #     serializer = self.serializer_class(queryset, many=True)
     #     return Response(serializer.data)
     
-    def create(self, request, *args, **kwargs): ## NO PASSWORD GIVEN 
-        # return super().create(request, *args, **kwargs)#
+    def create(self, request, *args, **kwargs): ## NO PASSWORD GIVEN / NEEDED
+        # email validation happens in model and frontend, but have different restraints, 
+        # model is more strict, frontend is more lenient
+        # change email validation in front end to match model
 
         user_data = {
             'name': request.data['name'],
@@ -33,15 +52,16 @@ class UserViewSet(viewsets.ModelViewSet):
         user_serializer = self.serializer_class(data=user_data)
 
         if User.objects.filter(email=user_data['email']).exists(): # if user already exists
-            pass
+            user_exists = True
         elif user_serializer.is_valid():
             user_serializer.save()
         else:
+            print(user_serializer.errors)
             return Response(user_serializer.errors, status=401)
         
 
 
-        if "message" not in request.data:
+        if "message" not in request.data: # this should never happend as front end should always send a message
             return Response(user_serializer.data, status=201)
         
         user_query = User.objects.filter(email=request.data['email'])
@@ -54,7 +74,9 @@ class UserViewSet(viewsets.ModelViewSet):
         if message_serializer.is_valid():
             message_serializer.save()
             return Response({"user": user_query[0].get_dict(),
-                            "message": message_serializer.data},
+                            "message": message_serializer.data,
+                            "status": "User and Message created" if not user_exists else "Message created, user already exists"
+                            },
                             status=201)
         return Response(message_serializer.errors, status=402)
         
@@ -86,7 +108,6 @@ class UserViewSet(viewsets.ModelViewSet):
     #         user.delete()
     #         return Response(status=204)
     #     return Response(status=404)
-
 
 class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
