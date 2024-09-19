@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from numpy import arange
 
 
-def generate_song(model, tokenizer, max_length, ids, song_filename="song.mid", pianoroll_filename="pianoroll.png"):
+def generate_song(model, tokenizer, max_length=200, ids=[1,], song_filename="api/common/assets/song.mid", pianoroll_filename="api/common/assets/song.png"):
     tokens = generate_tokens(model, tokenizer, max_length, ids)
     tokens_to_file(tokens, tokenizer, song_filename)
     make_piano_roll(song_filename, pianoroll_filename)
@@ -40,24 +40,22 @@ def tokens_to_file(tokens, tokenizer, filename="song.mid"):
     midi = tokenizer.decode(tokens)
     midi.dump_midi(filename)
 
-def make_piano_roll(song, output_filename="pianoroll.png"): ## file as input
-    # if str(type(song)) == "<class 'symusic.core.ScoreTick'>":
-    #     holder_path = "holder.mid"
-    #     song.dump_midi(holder_path)
-    #     song=holder_path
-    #     fn = os.path.join(song)
-    #     song = pretty_midi.PrettyMIDI(fn)
-    # elif type(song) == str:
+def make_piano_roll(song, output_filename="song.png"):
+
     song = pretty_midi.PrettyMIDI(song)
     piano_roll = song.get_piano_roll()
 
-    plt.figure(figsize=(10, 5))
+    fig = plt.figure(figsize=(10, 5))
+    ax = fig.add_subplot()
     plt.imshow(piano_roll, aspect='auto', origin='upper',)
     x_axis = arange(0, len(piano_roll[0]), 60*song.resolution) # x_axis = np.arange(0, len(piano_roll[0]), 60*song.resolution)
     plt.xticks(x_axis, [i/(song.resolution*12) for i in x_axis])
-    plt.xlabel(f'Time (s), {round(len(piano_roll[0])/(song.resolution*12), 3)}')
-    plt.ylabel('MIDI Note Number')
-    plt.title('Piano Roll')
+    plt.xlabel(f'Time (s), {round(len(piano_roll[0])/(song.resolution*12), 3)}', color='white')
+    plt.ylabel('MIDI Note Number', color='white')
+    plt.title('Piano Roll', color='white')
     # plt.colorbar(label='Note On/Off', ticks=[0, 1])
-    plt.savefig(output_filename)
+    
+
+    ax.tick_params(axis='both', colors='white')
+    plt.savefig(output_filename, transparent=True)
     # plt.show()

@@ -1,6 +1,7 @@
 from .models import *
 from .serializers import *
 
+# from django.http.Http import JsonResponse
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -9,7 +10,7 @@ import torch
 from transformers import AutoModelForCausalLM, GenerationConfig, BitsAndBytesConfig
 import numpy as np
 from miditok import REMI
-from utils import *
+from .common.util import *
 
 model_name = "finetuning_16.0epochs"
 model = AutoModelForCausalLM.from_pretrained("theglassofwater/"+model_name)
@@ -20,10 +21,22 @@ tokenizer = REMI.from_pretrained("theglassofwater/remi_12500")
 
 
 @api_view(['GET'])
-def generate_song(request):
-    tokens = generate_song(model, tokenizer, 1000)
-    return Response({"song": tokens})
+def generate_download_song(request, *args, **kwargs):
+    tokens = generate_song(model, tokenizer, max_length=50)
+    song_data = {
+        'song': tokens,
+        "song_url" : "http://127.0.0.1:8000/common/assets/song.mp3",
+        "img_url" : "http://127.0.0.1:8000/common/assets/song.png",
+        "midi_url" : "http://127.0.0.1:8000/common/assets/song.mid",
+    }
+    return Response(song_data)
     
+
+# class SongViewSet(viewsets.ViewSet):
+
+#     def retrieve(self, request, *args, **kwargs):
+#         tokens = generate_song(model, tokenizer, max_length=1000)
+#         return Response({"song": tokens})
 
 
 
