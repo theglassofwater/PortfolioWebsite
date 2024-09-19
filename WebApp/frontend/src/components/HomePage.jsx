@@ -9,14 +9,14 @@ import Header from './Header/Header';
 
 function HomePage() {
     return (
-        <div>
+        <>
             <Header />
             <Home />
             <Projects />
             <Skills />
             <Contact />
             <Footer />
-        </div>
+        </>
     );
 }
 
