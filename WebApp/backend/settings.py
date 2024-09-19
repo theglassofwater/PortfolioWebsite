@@ -16,6 +16,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+MEDIA_URL = '/common/assets/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'api/common/assets')
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Application definition
 
