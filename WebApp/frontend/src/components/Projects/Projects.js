@@ -12,7 +12,7 @@ const Projects = () => {
                 link="/music-generator"
                 image={Project1Image}
                 description="Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"   
-                // openInSamePage={true}
+                openInSamePage={true}
             />
             <Project
                 title="Portfolio Website"
