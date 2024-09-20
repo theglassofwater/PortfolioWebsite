@@ -1,8 +1,10 @@
 import torch
 from transformers import GenerationConfig
-import pretty_midi
+from pretty_midi import PrettyMIDI
 import matplotlib.pyplot as plt
+from matplotlib import use
 from numpy import arange
+from soundfile import write
 
 
 def generate_song(model, tokenizer, max_length=200, ids=[1,], song_filename="api/common/assets/song.mid", pianoroll_filename="api/common/assets/song.png"):
@@ -12,8 +14,11 @@ def generate_song(model, tokenizer, max_length=200, ids=[1,], song_filename="api
     return tokens
 
 
-
-
+def midi_to_mp3(midi_filename, mp3_filename="api/common/assets/song.mp3", sr=22050):
+    midi_data = PrettyMIDI(midi_filename)
+    audio_data = midi_data.synthesize(fs=sr)
+    write(mp3_filename, audio_data, sr)
+    return audio_data
 
 
 def generate_tokens(model, tokenizer, max_length, ids=[1,]): # cuda=False
@@ -42,9 +47,10 @@ def tokens_to_file(tokens, tokenizer, filename="song.mid"):
 
 def make_piano_roll(song, output_filename="song.png"):
 
-    song = pretty_midi.PrettyMIDI(song)
+    song = PrettyMIDI(song)
     piano_roll = song.get_piano_roll()
 
+    use('Agg')
     fig = plt.figure(figsize=(10, 5))
     ax = fig.add_subplot()
     plt.imshow(piano_roll, aspect='auto', origin='upper',)
@@ -56,6 +62,7 @@ def make_piano_roll(song, output_filename="song.png"):
     # plt.colorbar(label='Note On/Off', ticks=[0, 1])
     
 
+
     ax.tick_params(axis='both', colors='white')
     plt.savefig(output_filename, transparent=True)
-    # plt.show()
+    # plt.close(fig)
