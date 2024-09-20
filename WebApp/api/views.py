@@ -22,21 +22,25 @@ tokenizer = REMI.from_pretrained("theglassofwater/remi_12500")
 
 @api_view(['GET'])
 def generate_download_song(request, *args, **kwargs):
-    tokens = generate_song(model, tokenizer, max_length=50)
+
+    max_length  = request.query_params.get('max_length', 200)
+    try:
+        max_length = int(max_length)
+    except ValueError:
+        return Response({"error": "max_length must be an integer"}, status=400)
+        
+
+    tokens = generate_song(model, tokenizer, max_length=max_length, song_filename="api/common/assets/song.mid", pianoroll_filename="api/common/assets/song.png")
+    audio_data = midi_to_mp3("api/common/assets/song.mid", "api/common/assets/song.mp3")
+
     song_data = {
-        'song': tokens,
+        "tokens": tokens,
         "song_url" : "http://127.0.0.1:8000/common/assets/song.mp3",
         "img_url" : "http://127.0.0.1:8000/common/assets/song.png",
         "midi_url" : "http://127.0.0.1:8000/common/assets/song.mid",
     }
     return Response(song_data)
     
-
-# class SongViewSet(viewsets.ViewSet):
-
-#     def retrieve(self, request, *args, **kwargs):
-#         tokens = generate_song(model, tokenizer, max_length=1000)
-#         return Response({"song": tokens})
 
 
 
