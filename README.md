@@ -4,6 +4,9 @@ My Portfolio Web Application, the project currently displays details such as pro
 Django with Rest Framework\
 React with Axios (react hook form, @hookform/resolvers, yup )\
 
+
+Project section shows my Music Generator project, where transformer 60m model is used to generate music, it is then synthisised (from midi to playable audio(mp3)). This whole process is done server side(generating the song and synthisising the .mid file).
+
 Next Goals: 
 
 Frontend: 

@@ -1,4 +1,5 @@
-import torch
+from torch import tensor
+from torch.cuda import is_available
 from transformers import GenerationConfig
 from pretty_midi import PrettyMIDI
 import matplotlib.pyplot as plt
@@ -26,7 +27,7 @@ def generate_tokens(model, tokenizer, max_length, ids=[1,]): # cuda=False
 
     new_tokens = max_length - len(ids)
 
-    input = torch.tensor([ids])
+    input = tensor([ids])
 
     generation_config = GenerationConfig(
         max_new_tokens=new_tokens,
@@ -35,7 +36,7 @@ def generate_tokens(model, tokenizer, max_length, ids=[1,]): # cuda=False
         temperature=0.9,
         pad_token_id=tokenizer.pad_token_id,
     )
-    if torch.cuda.is_available():
+    if is_available():
         input = input.cuda()
 
     output = model.generate(input, generation_config=generation_config)
@@ -61,8 +62,6 @@ def make_piano_roll(song, output_filename="song.png"):
     plt.title('Piano Roll', color='white')
     # plt.colorbar(label='Note On/Off', ticks=[0, 1])
     
-
-
     ax.tick_params(axis='both', colors='white')
     plt.savefig(output_filename, transparent=True)
     # plt.close(fig)

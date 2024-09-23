@@ -5,16 +5,12 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 3vmin);
-    color: #a52a2a;
-    word-spacing: 10vmin; */
-    margin-left: 0%;
-    margin-right: 0%;
-    /* border: 1px solid #ddd; */
+    color: #a52a2a; */
+    word-spacing: 30px;
+    border: 1px solid var(--secondary-color);
     background-color: var(--secondary-color);
-    height: 20dvh;
-    /* color: var(--background-color); */
-
-
+    height: 17dvh;
+    color: var(--background-color);
     span{
         color: var(--background-color);
         font-size: 2.5rem;
