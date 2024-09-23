@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 5dvh;
+    /* margin-top: 5dvh; */
     font-family: 'Courier New', Courier, monospace;
     /* height: 100dvh; */
 }
@@ -34,6 +34,7 @@
         justify-self: center;
         background-color: var(--background-color);
         color: white;
+        height: 37dvh;
         font-family: 'Courier New', Courier, monospace;
       }
 

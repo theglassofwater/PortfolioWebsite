@@ -2,9 +2,11 @@
   --background-color: #141414;
   --secondary-color: #a52a2a;  /* #a52a2a  #513383*/
   --text-color: #ffffff;
+  width: 100%;
 }
 
 body {
+  /* width: 100%; */
   background-color: var(--background-color);
   text-align: center;
   margin-left: 1%;

@@ -8,8 +8,8 @@
     img {
       width: 50%;
       align-self: center;
-      background-color: #fff;
-      border-radius: 20px;
+      background-color: var(--background-color);
+      border-radius: 40px;
     }
   
     a {
