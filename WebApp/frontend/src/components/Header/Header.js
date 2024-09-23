@@ -5,9 +5,9 @@ function Header() {
         <section id="header">
             <div className={styles.container} >
                 <h1>
-                    <span onClick={() => scrollToSection('header')}>Home</span> &nbsp;
-                    <span onClick={() => scrollToSection('projects')}>Projects</span> &nbsp;
-                    <span onClick={() => scrollToSection('skills')}>Skills</span> &nbsp;
+                    <span onClick={() => scrollToSection('header')}>Home</span> 
+                    <span onClick={() => scrollToSection('projects')}>Projects</span> 
+                    <span onClick={() => scrollToSection('skills')}>Skills</span> 
                     <span onClick={() => scrollToSection('contact')}>Contact</span>
                 </h1>
             </div>
