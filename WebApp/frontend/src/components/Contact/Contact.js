@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState }from "react";
 import styles from "./Contact.module.css";
-import {useForm, Controller} from "react-hook-form";
+import {useForm} from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { object, string } from 'yup';
 import AxiosInstance from "../Axios";
 
 const Contact = () => {
+    const [contactData, setContactData] = useState(false);
+
     const schema = object().shape({
         name: string().required('Name is required'),
         email: string().email().required('Email is required'),
         message: string().required('Message is required')
     });
 
-    const { register, control, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
+    const { register, handleSubmit, formState: { errors } } = useForm({resolver: yupResolver(schema)});
   
     const onSubmit = data => {
         AxiosInstance.post('users/', {
@@ -22,6 +24,7 @@ const Contact = () => {
         })
         .then(response => {
             console.log('Data successfully posted:', response.data);
+            setContactData(true);
         })
         .catch(error => {
             console.log('Error posting data:', error);
@@ -45,6 +48,7 @@ const Contact = () => {
                     <textarea type="text" id="Message" name="Message" placeholder="Message" {...register('message', { required: 'message is required' })} required />
                     {errors.message && <p>{errors.message.message}</p>}
                 </div>
+                {contactData && <p>Contact information has been submitted!</p>}
                 <input type="submit" value="Submit" />  {/* add text or something to show it is submitted */}
             </form>
         </section>
