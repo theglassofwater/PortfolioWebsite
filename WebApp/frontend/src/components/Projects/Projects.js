@@ -21,8 +21,8 @@ const Projects = () => {
                 description="Description of Project 2 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
             />
             <Project
-                title="Project 3"
-                link="https://www.github.com/theglassofwater"
+                title="Electricity"
+                link="https://github.com/theglassofwater/Electricity"
                 image={Project1Image}
                 description="Description of Project 3 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
             />
