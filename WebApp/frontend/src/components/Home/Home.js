@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
 import React from "react";
-import YeImage from "../../assets/logos/YE-192x192.png";
+// import YeImage from "../../assets/logos/YE-192x192.png";
 import gitIcon from "../../assets/github_icon.svg";
 import linkedinIcon from "../../assets/linkedin_icon.svg";
 import CV from "../../assets/CV_Base_Data.pdf";
