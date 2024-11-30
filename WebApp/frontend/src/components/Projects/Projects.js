@@ -11,7 +11,14 @@ const Projects = () => {
                 title="Music Generator"
                 link="/music-generator"
                 image={Project1Image}
-                description="Description of Project 1 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"   
+                description="Click to generate some music!"   
+                openInSamePage={true}
+            />
+            <Project
+                title="Aim Trainer"
+                link="/aim-trainer"
+                image={Project1Image}
+                description="Click to play the game!       "
                 openInSamePage={true}
             />
             <Project
@@ -24,13 +31,13 @@ const Projects = () => {
                 title="Electricity"
                 link="https://github.com/theglassofwater/Electricity"
                 image={Project1Image}
-                description="Description of Project 3 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
+                description="Description of Project 2 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
             />
             <Project
-                title="Project 4"
-                link="https://www.github.com/theglassofwater"
+                title="Aim Trainer"
+                link="/aim-trainer"
                 image={Project1Image}
-                description="Description of Project 4 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
+                description="Click to play the game!"
             />
         </div>
     </section>
