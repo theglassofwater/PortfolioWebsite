@@ -33,12 +33,6 @@ const Projects = () => {
                 image={Project1Image}
                 description="Description of Project 2 dsffnjdsnfdsnfjods fjdsnfjosdnf jisd fjosndfosd fjsof dsfnodsf"
             />
-            <Project
-                title="Aim Trainer"
-                link="/aim-trainer"
-                image={Project1Image}
-                description="Click to play the game!"
-            />
         </div>
     </section>
     

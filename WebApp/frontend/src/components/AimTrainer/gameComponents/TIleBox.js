@@ -10,8 +10,9 @@ const TileBox = (props) => {
     const [position, setPosition] = useState([GenerateRandomNum(-6,6),GenerateRandomNum(-3,3),0])
 
     if (clicked) {
-        setPosition([GenerateRandomNum(-6,6),GenerateRandomNum(-3,3),0])
-        click(false)
+        setPosition([GenerateRandomNum(-6,6),GenerateRandomNum(-3,3),0]);
+        click(false);
+        props.onDeath();
     }
 
     const moveBox = () => {
@@ -27,7 +28,7 @@ const TileBox = (props) => {
             onClick={(event) => click(!clicked)}
             onPointerOver={(event) => hover(true)}
             onPointerOut={(event) => hover(false)}>
-                
+
             <boxGeometry args={[1,1,.5]}/>
             <meshStandardMaterial color={hovered ? "blue" : "red"} />
         </mesh>
