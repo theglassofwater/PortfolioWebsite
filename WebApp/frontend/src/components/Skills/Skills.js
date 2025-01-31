@@ -12,7 +12,7 @@ const Skills = () => {
             <div className={styles.skillContainer}>   
                 <SkillsList icon={tick} name="Machine Learning"/>
                 <SkillsList icon={tick} name="Artificial Intelligence"/>
-                <SkillsList icon={tick} name="Data Analytics"/>
+                <SkillsList icon={tick} name="Web Development"/>
             </div>
             <hr />
             <div className={styles.skillContainer}>   
