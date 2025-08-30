@@ -1,5 +1,7 @@
 from .models import *
 from .serializers import *
+import os
+from django.conf import settings
 
 # from django.http.Http import JsonResponse
 from rest_framework import viewsets, permissions
@@ -29,9 +31,16 @@ def generate_download_song(request, *args, **kwargs):
     except ValueError:
         return Response({"error": "max_length must be an integer"}, status=400)
         
+    base_dir = str(settings.BASE_DIR)
+    assets_dir = base_dir + "/api/common/assets"
+    song_path = assets_dir + "/song.mid"
+    img_path = assets_dir + "/song.png"
+    mp3_path = assets_dir + "/song.mp3"
 
-    tokens = generate_song(model, tokenizer, max_length=max_length, song_filename="api/common/assets/song.mid", pianoroll_filename="api/common/assets/song.png")
-    audio_data = midi_to_mp3("api/common/assets/song.mid", "api/common/assets/song.mp3")
+    print(mp3_path)
+
+    tokens = generate_song(model, tokenizer, max_length=max_length, song_filename=song_path, pianoroll_filename=img_path)
+    audio_data = midi_to_mp3(song_path, mp3_path)
 
     song_data = {
         "tokens": tokens,
