@@ -6,6 +6,13 @@ React with Axios (react hook form, @hookform/resolvers, yup, react three fiber, 
 
 Project section shows my Music Generator project, where transformer 60m model is used to generate music, it is then synthisised (from midi to playable audio(mp3)). This whole process is done server side(generating the song and synthisising the .mid file).
 
+
+python 3.11 venv, 
+pip install -r requirements.txt, 
+Run django server, 
+run react 
+
+
 Next Goals: 
 
 Frontend: <br />
