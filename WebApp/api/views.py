@@ -37,7 +37,6 @@ def generate_download_song(request, *args, **kwargs):
     img_path = assets_dir + "/song.png"
     mp3_path = assets_dir + "/song.mp3"
 
-    print(mp3_path)
 
     tokens = generate_song(model, tokenizer, max_length=max_length, song_filename=song_path, pianoroll_filename=img_path)
     audio_data = midi_to_mp3(song_path, mp3_path)
@@ -70,6 +69,7 @@ class UserViewSet(viewsets.ModelViewSet):
         # email validation happens in model and frontend, but have different restraints, 
         # model is more strict, frontend is more lenient
         # change email validation in front end to match model
+        user_exists = False
 
         user_data = {
             'name': request.data['name'],
@@ -93,7 +93,7 @@ class UserViewSet(viewsets.ModelViewSet):
         user_query = User.objects.filter(email=request.data['email'])
 
         message_data = {
-            'user': user_query[0].id,
+            'user': user_query[0].id, # type: ignore
             'message': request.data['message'],
         }
         message_serializer = MessageSerializer(data=message_data)
